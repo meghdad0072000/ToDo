@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="p-5">
+        <div class="input-group mb-3">
+          <input type="text" placeholder="Enter ToDo" class="form-control" [(ngModel)]="inputValue" (keyup.enter)="addToDo()">
+          <div class="input-group-append">
+            <span class="input-group-text btn btn-primary cursor-pointer" (click)="addToDo()" >
+              <i class="fas fa-plus"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="my-1" *ngFor="let item of toDoItems">
+          <app-to-do [data]="item"></app-to-do>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
